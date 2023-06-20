@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="fontawsame-12vg-active fontawsame-12svg-complete">
+<script src="https://kit.fontawesome.com/dd1b77aad7.js" crossorigin="anonymous"></script>
   <head>
     <title>Bookers2</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -74,11 +74,11 @@
   </header>
   <% if flash[:notice] %>
       <div class="flash">
-　<%= flash[:notice] %>
-　　　　　　　 </div>
+ <%= flash[:notice] %>
+        </div>
     <% end %>
   <p id="notice"></p>
-  <%= yield %>
+  <main> <%= yield %></main>
    <footer>
     <dif class="container mt-5">
       <dif class="row">
@@ -89,5 +89,5 @@
     </dif>
   </footer>
   </body>
-  
+
 </html>

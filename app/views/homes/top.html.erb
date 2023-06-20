@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>課題３トップ</title>
-  </head>
-  <body>
+
     <p id="notice"></p>
     <div class = "container">
     <div class = "row">  
@@ -24,15 +18,19 @@
     </p>
     <p>you can share and exchange your opinions , inpressions , and emotions</p>
     <p>about various books!</p>
-    <div class="btn-wrapper col-10 mx-auto"></div>
+    <div class="btn-wrapper col-10 mx-auto">
     <div class = "row"> 
-    <div class = "row"> 
-    <li><%= link_to  new_user_session_path, class: "btn btn-info btn-sm btn-block mb-3 sign_in" do %>
-    </li>
+    <%= link_to  new_user_session_path, class: "btn btn-info btn-sm btn-block mb-3 sign_in" do %>
        Log in
      <% end %>
-     <li><%= link_to  new_user_registration_path, class: "btn btn-success btn-sm btn-block sign_up" do %>
-      </i> Sign up
+     </div>
+      <div class = "row"> 
+     <%= link_to  new_user_registration_path, class: "btn btn-success btn-sm btn-block sign_up" do %>
+       Sign up
      <% end %>
-  </body>
-</html>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  
