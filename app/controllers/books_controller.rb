@@ -17,13 +17,14 @@ class BooksController < ApplicationController
   def show
    @book = Book.find(params[:id])
    @book_new = Book.new
+   @user = current_user
    
   end
 
   def update
     @book = Book.find(params[:id])
-    @book.update(Book_params)
-    redirect_to Book_path(Book.id)
+    @book.update(book_params)
+    redirect_to book_path(@book.id)
   end
   def destroy
     @book = Book.find(params[:id])  # データ（レコード）を1件取得
@@ -39,6 +40,7 @@ class BooksController < ApplicationController
       redirect_to book_path(@book.id)
    else
       @books = Book.all
+      @user = current_user
       render :index
    end
    end
