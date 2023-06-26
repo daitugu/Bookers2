@@ -1,8 +1,7 @@
 <div class="container px-5 px-sm-0">
 <div class="row">
 <div class="col-md-3">
-<div>
-  <h2>User Info</h2>
+  <h2>User Ino</h2>
     <%= image_tag @user.get_profile_image(100,100) %>
     <table class="table">
     <tbody>
@@ -13,7 +12,7 @@
       </tr>
       <tr>
       <th>introduction</th>
-      <th><%= @user.id %></th>
+      <th><%= @user.introduction %></th>
       </tr>
       </tbody>
       </table>
@@ -23,9 +22,14 @@
     <% end %>
     </div>
 
-    <h2 class="mt-3">New book</h2>
-</div>
-<%= render "books/form", book: @book %>
+<h2 class="mt-3">New book</h2>
+<%=form_with model: @book do |f| %>
+  <%= f.label :title %><br>
+  <%= f.text_field :title, autofocus: true, autocomplete: "user_title" %><br>
+  <%= f.label :body,"Opinion" %><br>
+  <%= f.text_area :body, autofocus: true, class:"formcontrol book_body" ,autocomplete: "user_Opinion" %><br>
+    <%=f.submit 'Create Book', class:"btn btn-success" %><br>
+<% end %>
 </div>
 <div class="col-md-8 offset-md-1">
 <h2>Users</h2>
@@ -45,7 +49,7 @@
      </td>
      <td><%= user.name %></td>
      <td><%= link_to user_path(user.id) do %>
-        show
+        Show
      <% end %></td>
      </tr>
      <% end %>
